@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ab8-2i-WBI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Google Maps-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="SJu-No-61z">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7WX-gE-Ln9"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYo-rt-Jp5" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="108" width="600" height="448"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZX-xn-PCB">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7TZ-w7-Ybz"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" id="vGO-kH-gCW">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="UvR-yG-bSc">
+                                            <rect key="frame" x="20" y="6.5" width="255" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Normal"/>
+                                                <segment title="Satellite"/>
+                                                <segment title="Hybrid"/>
+                                                <segment title="Terrain"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="setMap:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Wc-L0-iwL"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wYo-rt-Jp5" firstAttribute="top" secondItem="SJu-No-61z" secondAttribute="bottom" id="7ci-xA-9tC"/>
+                            <constraint firstItem="SJu-No-61z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="CAm-rk-dSL"/>
+                            <constraint firstItem="wYo-rt-Jp5" firstAttribute="top" secondItem="SJu-No-61z" secondAttribute="bottom" id="HXl-E9-bXc"/>
+                            <constraint firstItem="wYo-rt-Jp5" firstAttribute="bottom" secondItem="UZX-xn-PCB" secondAttribute="bottom" id="Ib3-ys-J7K"/>
+                            <constraint firstItem="SJu-No-61z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="J1P-sq-72q"/>
+                            <constraint firstItem="UZX-xn-PCB" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="J9X-Kd-ZcE"/>
+                            <constraint firstItem="wYo-rt-Jp5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Nvb-Tn-g8w"/>
+                            <constraint firstItem="wYo-rt-Jp5" firstAttribute="trailing" secondItem="UZX-xn-PCB" secondAttribute="trailing" id="OCL-gQ-x7A"/>
+                            <constraint firstItem="wYo-rt-Jp5" firstAttribute="top" secondItem="SJu-No-61z" secondAttribute="bottom" id="Rzy-kk-bfs"/>
+                            <constraint firstItem="wYo-rt-Jp5" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" constant="-44" id="U8C-BI-V7i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SJu-No-61z" secondAttribute="trailing" constant="-20" id="YJ9-NF-0XB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wYo-rt-Jp5" secondAttribute="bottom" id="bfI-Gu-gy5"/>
+                            <constraint firstItem="wYo-rt-Jp5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="jGV-re-Hgr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wYo-rt-Jp5" secondAttribute="trailing" constant="-20" id="kdu-t5-fwh"/>
+                            <constraint firstItem="UZX-xn-PCB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="nLO-BK-gUf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wYo-rt-Jp5" secondAttribute="bottom" id="oAt-Vv-QRe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UZX-xn-PCB" secondAttribute="trailing" constant="-20" id="oNu-XC-5sY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wYo-rt-Jp5" secondAttribute="trailing" constant="-20" id="wpH-5K-j4V"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7ci-xA-9tC"/>
+                                <exclude reference="Ib3-ys-J7K"/>
+                                <exclude reference="Nvb-Tn-g8w"/>
+                                <exclude reference="OCL-gQ-x7A"/>
+                                <exclude reference="Rzy-kk-bfs"/>
+                                <exclude reference="kdu-t5-fwh"/>
+                                <exclude reference="bfI-Gu-gy5"/>
+                                <exclude reference="oAt-Vv-QRe"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Google Maps" id="gaQ-BA-JTb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="M3x-wh-MqC">
+                            <connections>
+                                <action selector="dissmissKeyBoard:" destination="BYZ-38-t0r" id="vLR-Ca-uhE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="wYo-rt-Jp5" id="ruE-8S-hxX"/>
+                        <outlet property="searchBar" destination="SJu-No-61z" id="tIo-W7-fUA"/>
+                        <outlet property="switcher" destination="UvR-yG-bSc" id="sLX-Us-4s7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="-335"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2u9-5T-pZL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ab8-2i-WBI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VSz-zX-hMP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VDz-fJ-M9T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0NJ-NI-PuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="207" y="-335"/>
+        </scene>
+    </scenes>
+</document>
